@@ -73,12 +73,9 @@ function conversation(conv, conversationType, speech) {
 
 // Register handlers for Dialogflow intents
 app.intent('Default Welcome Intent', (conv) => {
-  const welcomeSpeech = 'Welcome! What station will you be departing from, what line will you be riding, and what direction will you be heading?';
+  const welcomeSpeech = `Welcome! What station will you be departing from, 
+                         what line will you be riding, and what direction will you be heading?`;
   conversation(conv, 'ask', welcomeSpeech);
-});
-
-app.intent('Default Goodbye Intent', (conv) => {
-  conversation(conv, 'close', 'Goodbye.');
 });
 
 app.intent('basic train times request', (conv, { startingStationCode, direction, line }) => fetchTrainData(startingStationCode)
