@@ -27,7 +27,7 @@ const utilJsonParse = content => JSON.parse(content);
 function fetchTrainData(startingStationCode) {
   return new Promise(((resolve, reject) => {
     // TODO: move api key value to command line and api url to config file, for now,  hard code here
-    const apiKey = '9683c4472f2e49dd84efefc263c0a2c6';
+    const apiKey = '';
     request(`https://api.wmata.com/StationPrediction.svc/json/GetPrediction/${startingStationCode}?api_key=${apiKey}`, (err, res, body) => {
       if (err) { reject(err); }
       resolve(body);
